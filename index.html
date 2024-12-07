@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beacon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="cursor"></div>
+<div class="cursor2"></div>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logobeacon.png" class="logo" alt="Beacon Logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="wilfrid-laurier.html">Wilfrid Laurier University</a></li>
+                <li><a href="waterloo.html">University of Waterloo</a></li>
+                <li><a href="yorkuni.html">York University</a></li>
+                <li><a href="uoft.html">University of Toronto</a></li>
+                <li><a href="mcmaster.html">McMaster University</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+        
+        <div class="content">
+            <h1>All Your Events In One Place</h1>
+            <p>At Beacon, we’re dedicated to simplifying campus life for university students across Ontario.</p>
+
+  
+    <div class="team-section">
+        <h2> </h2>
+        <h2> </h2>
+        <h2> </h2>
+        <h2>Meet the Team</h2>
+        <p>Our team at Beacon has five members: Tanish Lad, Purva Shah, Raeya Sangha, Heli Patel, and Yash Rajput</p>
+        <img src="team317.png" class="image" alt="team 317" style="width: 1000px; height: auto;">
+
+    </div>
+
+        </div>
+    </div>
+
+   
+
+
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 id="eventTitle"></h2>
+                <p id="eventDate"></p>
+            </div>
+            <div class="modal-body">
+                <p id="eventDescription"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var cursor = document.querySelector(".cursor");
+        var cursor2 = document.querySelector(".cursor2");
+    
+        document.addEventListener("mousemove", function (e) {
+            cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+        });
+    </script>
+
+    <script src="main.js"></script>
+
+
+
+    <div class="footer">
+        <p>Copyright © 2024 Beacon</p>
+    </div>
+</body>
+
+</html>

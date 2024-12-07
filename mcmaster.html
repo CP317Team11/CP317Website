@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McMaster University</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logobeacon.png" class="logo" alt="Beacon Logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="wilfrid-laurier.html">Wilfrid Laurier University</a></li>
+                <li><a href="waterloo.html">University of Waterloo</a></li>
+                <li><a href="yorkuni.html">York University</a></li>
+                <li><a href="uoft.html">University of Toronto</a></li>
+                <li><a href="mcmaster.html" class="active">McMaster University</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+        <div class="content-container">
+            <header>
+                <h1>McMaster University</h1>
+                <p>McMaster University is a public research university located in Hamilton, Ontario, Canada. Established in 1887, it is renowned for its innovative teaching methods and emphasis on interdisciplinary research. McMaster offers a wide array of undergraduate, graduate, and professional programs in fields like health sciences, engineering, business, humanities, and social sciences. Known for its diverse and inclusive community, the university prioritizes experiential learning, sustainability, and global engagement. Its vibrant campus fosters academic, cultural, and extracurricular activities, providing students with opportunities to develop skills and make meaningful contributions to society.</p>
+            </header>
+            <div id="calendar-container">
+                <div id="calendar"></div>
+            </div>
+        </div>
+
+
+        <div id="eventModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="eventTitle"></h2>
+                <p id="eventDate"></p>
+                <p id="eventDescription"></p>
+            </div>
+        </div>
+
+
+        <script>
+            $(document).ready(function () {
+                console.log("Document is ready. Loading Excel file for McMaster...");
+                loadExcelFile('eventsdatabase.xlsx', 'MCMASTER Events');
+            });
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var cursor = document.querySelector(".cursor");
+                var cursor2 = document.querySelector(".cursor2");
+            
+                document.addEventListener("mousemove", function (e) {
+                    cursor.style.left = e.clientX + "px";
+                    cursor.style.top = e.clientY + "px";
+                    cursor2.style.left = e.clientX + "px";
+                    cursor2.style.top = e.clientY + "px";
+                });
+            });
+        </script>
+
+        <script src="main.js"></script>
+
+        <div class="footer">
+            <p>Copyright © 2024 Beacon</p>
+        </div>
+    </body>
+</html>

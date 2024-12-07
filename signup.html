@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        
+        .banner {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('tempwallpaper.jpeg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .banner .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .banner .content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .banner .content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .banner .content button {
+            background: transparent;
+            border: 2px solid #4dbbff;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .banner .content button:hover {
+            background: #4dbbff;
+            color: #fff;
+        }
+
+
+        .navbar {
+            width: 85%;
+            margin: auto;
+            padding: 35px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 320px;
+            cursor: pointer;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            font-size: 12px;
+        }
+
+        .navbar ul li:hover a {
+            color: #4dbbff;
+        }
+
+        .navbar ul li::after {
+            content: '';
+            height: 3px;
+            width: 0;
+            background: #4dbbff;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: width 0.5s ease;
+        }
+
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+
+   
+        .signup-form {
+            width: 100%;
+            max-width: 500px;
+            margin: -30px auto;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .signup-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .signup-form form input {
+            margin-bottom: 2px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .signup-form form button {
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .signup-form form button:hover {
+            background-color: #2980b9;
+        }
+
+        .form-footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            margin-top: 0px;
+        }
+
+      
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: #fff;
+            position: relative;
+            margin-top: 0px;
+        }
+
+        .cursor {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: 0.05s;
+            z-index: 10000;
+        }
+        
+        .cursor2 {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: 0.05s;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+    
+
+    <div class="banner">
+        <div class="navbar">
+            <img src="logobeacon.png" class="logo" alt="Beacon Logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="wilfrid-laurier.html">Wilfrid Laurier University</a></li>
+                <li><a href="waterloo.html">University of Waterloo</a></li>
+                <li><a href="yorkuni.html">York University</a></li>
+                <li><a href="uoft.html">University of Toronto</a></li>
+                <li><a href="mcmaster.html">McMaster University</a></li>
+                <li><a href="signup.html" class="active">Sign Up</a></li>
+            </ul>
+        </div>
+   
+        <div class="signup-form">
+            <h2>Sign Up for Notifications and Alerts</h2>
+            <form method="post" action="https://script.google.com/macros/s/AKfycbwuKAhq2tBPPQwCCbHZfDR2KcyPPy_0vL7XCe9I_cHeALe9hcPJWf_QUCzzlh63E5vtHA/exec">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required><br><br>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="university">University:</label>
+                <input type="text" id="university" name="university" required><br><br>
+                <button type="submit">Sign Up</button>
+            </form>
+            <script src="main.js"></script>
+            
+            
+            
+            <div class="form-footer">
+                <p>By signing up, you agree to receive notifications and alerts about upcoming events.</p>
+            </div>
+        </div>
+    </div>        
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cursor = document.querySelector(".cursor");
+            const cursor2 = document.querySelector(".cursor2");
+
+            document.addEventListener("mousemove", function (e) {
+                cursor.style.left = e.clientX + "px";
+                cursor.style.top = e.clientY + "px";
+                cursor2.style.left = e.clientX + "px";
+                cursor2.style.top = e.clientY + "px";
+            });
+        });
+    </script>
+
+    
+
+    <div class="footer">
+        <p>Copyright © 2024 Beacon</p>
+    </div>
+
+    <script src="main.js"></script>
+
+
+</body>
+</html>
